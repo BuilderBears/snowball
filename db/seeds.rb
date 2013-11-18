@@ -8,6 +8,6 @@
 
 vinney = User.create(name: 'Vinney', email: 'vinney@email.com', password: 'password')
 ruby_help = Concern.create(title: 'ruby-help', description: 'looking for ruby resources')
-ruby_response_one = Response.create(title: 'this one was helpful', url: 'www.google.com')
-ruby_response_two = Response.create(title: 'i liked this site', url: 'www.facebook.com')
+ruby_response_one = Response.create(title: 'this one was helpful', url: 'www.google.com', concern_id: 1, user_id: 1)
+ruby_response_two = Response.create(title: 'i liked this site', url: 'www.facebook.com', concern_id: 1, user_id: 1)
 ruby_response_one.upvotes.create(user_id: vinney.id)

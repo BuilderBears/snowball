@@ -33,6 +33,6 @@ class ConcernsController < ApplicationController
 
   private
   def concern_params
-    params.require(:concern).permit(:title, :description)
+    params.require(:concern).permit(:title, :description, :response_attributes => [:title, :url])
   end
 end

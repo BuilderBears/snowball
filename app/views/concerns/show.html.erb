@@ -1,2 +1,7 @@
 <%= @concern.title %>
 <%= @concern.description %>
+<% @concern.responses.each do |response| %>
+<%= response.title %>
+<%= response.url %>
+<%= response.upvotes.count %>
+<% end %>
