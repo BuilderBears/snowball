@@ -21,6 +21,5 @@ describe Concern do
     expect(concern.user).to_not be_nil
   end
 
-  it "can build a response onto itself" do
-  end
+  it "can build a response onto itself"
 end
