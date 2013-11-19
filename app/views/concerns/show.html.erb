@@ -1,7 +1,7 @@
-<%= @concern.title %>
-<%= @concern.description %>
+<p>Title: <%= @concern.title %></p>
+<p> Description: <%= @concern.description %></p>
 <% @concern.responses.each do |response| %>
-<%= response.title %>
-<%= response.url %>
-<%= response.upvotes.count %>
+<p>Response Title: <%= response.title %></p>
+<p>URL: <%= response.url %></p>
+<p>Upvotes: <%= response.upvotes.count %></p>
 <% end %>

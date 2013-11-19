@@ -1,4 +1,4 @@
 <% @concerns.each do |concern| %>
-  <p><%= link_to concern.title, concern_path(concern) %></p>
-  <p><%= concern.description %></p>
+  <p>Title: <%= link_to concern.title, concern_path(concern) %></p>
+  <p>Description: <%= concern.description %></p>
 <% end %>

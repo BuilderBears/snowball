@@ -4,5 +4,9 @@
   <input id="title" type="text" name="concern[title]" value="<%= @concern.title %>">
   <label for="description">Description</label>
   <textarea id="description" name="concern[description]"><%= @concern.description %></textarea>
-  <input type="submit">
+  <label for="concern_response_title">Response Title</label>
+  <input id="concern_response_title" type="text" name="concern[response_attributes][title]">
+  <label for="concern_response_url">Response URL</label>
+  <input id="concern_response_url" type="text" name="concern[response_attributes][url]">
+  <input type="submit" value="Edit">
 </form>
