@@ -6,16 +6,17 @@
   <p>Response Title: <%= response.title %></p>
   <p>Added by: <%= link_to response.user.name, user_path(response.user) %></p>
   <p>URL: <%= response.url %></p>
+  <p>Description: <%= response.description %></p>
   <p>Upvotes: <%= response.upvotes.count %></p>
   </div>
 <% end %>
 
 <h2>Add a New Response</h2>
 <form method="post" action="/responses">
-  <label for="response_title">Response Title</label>
-  <input id="response_title" type="text" name="response[title]"><br>
   <label for="response_url">Response URL</label>
   <input id="response_url" type="text" name="response[url]"><br>
+  <label for="response_description">Description</label>
+  <textarea id="response_description" name="response[description]"></textarea>
   <input name="response[concern_id]" type="hidden" value="<%= @concern.id %>" >
   <input name="response[user_id]" type="hidden" value="<%= session["user_id"] %>" >
   <input type="submit">

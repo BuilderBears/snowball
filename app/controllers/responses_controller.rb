@@ -38,6 +38,6 @@ class ResponsesController < ApplicationController
 
   private
   def response_params
-    params.require(:response).permit(:title, :url, :concern_id, :user_id)
+    params.require(:response).permit(:description, :url, :concern_id, :user_id, :title)
   end
 end
