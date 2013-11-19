@@ -10,6 +10,8 @@ class ResponsesController < ApplicationController
     # in the future, needs to assign user_id
     response = Response.new(response_params)
 
+    # refactor to do a different action when receiving .json
+    # using the respond_to method (ex. generic scaffold code)
     if response.save
       redirect_to concern_path(response.concern)
     else
