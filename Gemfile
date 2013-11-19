@@ -9,6 +9,8 @@ group :development, :test do
    gem 'rspec-rails'
    gem 'capybara'
    gem 'pry'
+   gem 'factory_girl_rails'
+   gem 'faker'
 end
 
 group :production do
