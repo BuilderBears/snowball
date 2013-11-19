@@ -1,9 +1,13 @@
 require 'spec_helper'
 
 describe Concern do
-  let(concern){Concern.create(
+  let(:user){User.create(
+    name: "Joe User",
+    email: "joe@user.com"
+  )}
+  let(:concern){Concern.create(
     title: "Test Title",
-    description: "This is a test description."
+    description: "This is a test description.",
   )}
   it "is valid with a title and description" do
     expect(concern).to be_valid
@@ -20,8 +24,6 @@ describe Concern do
   end
 
   it "belongs to a user" do
-    # This one needs help, clearly.
-    concern = Concern.new(title: "test title", description: "test description")
     expect(concern.user).to_not be_nil
   end
 

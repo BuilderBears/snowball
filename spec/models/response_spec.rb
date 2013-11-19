@@ -8,7 +8,6 @@ describe Response do
     )}
 
   it "is valid with a title and URL" do
-    # This is marked as pending because it's a false positive. we have no validation yet.
     expect(response).to be_valid
   end
 
@@ -23,7 +22,6 @@ describe Response do
   end
 
   it "is valid if a valid URL is supplied" do
-    # change to check for validation after building url validation
     expect(response).to be_valid
   end
 
@@ -33,7 +31,6 @@ describe Response do
   # end
 
   it "is invalid when supplied an invalid URL" do
-    # change to check for validation after building url validation
     response.url = "1.4.p"
     expect(response).to have(1).errors_on(:url)
   end
