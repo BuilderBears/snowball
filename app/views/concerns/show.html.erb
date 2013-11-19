@@ -6,7 +6,8 @@
   <p>Response Title: <%= response.title %></p>
   <p>Added by: <%= link_to response.user.name, user_path(response.user) %></p>
   <p>URL: <%= response.url %></p>
-  <p>Upvotes: <%= response.upvotes.count %></p>
+  <p>Upvotes: <span id="upvotescountspan" data-responseid="<%= response.id %>"><%= response.upvotes.count %></span></p>
+  <input type="button" onclick="upvoteResponse()" value="Upvote">
   </div>
 <% end %>
 
@@ -18,5 +19,5 @@
   <input id="response_url" type="text" name="response[url]"><br>
   <input name="response[concern_id]" type="hidden" value="<%= @concern.id %>" >
   <input name="response[user_id]" type="hidden" value="<%= session["user_id"] %>" >
-  <input type="submit">
+  <input type="submit" value="Add Response">
 </form>

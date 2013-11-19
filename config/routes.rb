@@ -13,6 +13,8 @@ Snowball::Application.routes.draw do
 
   root 'concerns#index'
 
+  post "concerns_upvote_response" => "concerns#upvote_response"
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
