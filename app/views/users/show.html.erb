@@ -1,0 +1,25 @@
+<h1><strong>Name:</strong> <%= @user.name %> </h1>
+
+<h3><strong>Concerns written by <%= @user.name %>:</strong></h3>
+<% @user.concerns.each do |concern| %>
+
+  <div class="well">
+  <p>Concern Title: <%= concern.title %></p>
+  <p>Responses: <% concern.responses.each do |response| %></p>
+    <p>Response Title: <%= response.title %></p>
+    <p>Response URL: <%= response.url %></p>
+    <p>Response Upvotes: <%= response.upvotes.count %></p>
+  <% end %>
+  </div>
+<% end %>
+
+
+<h3><strong>Responses added by <%= @user.name %>:</strong></h3>
+  <% @user.responses.each do |response| %>
+  <div class="well">
+    <p><strong>Response Title: <%= response.title %></strong></p>
+    <p>For Post called: <%= response.concern.title %></p>
+    <p>Response URL: <%= response.url %></p>
+    <p>Response Upvotes: <%= response.upvotes.count %></p>
+    </div>
+  <% end %>
