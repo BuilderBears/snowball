@@ -6,6 +6,7 @@
 <p>Upvotes: <%= response.upvotes.count %></p>
 <% end %>
 
+<h2>Add a New Response</h2>
 <form method="post" action="/responses">
   <label for="response_title">Response Title</label>
   <input id="response_title" type="text" name="response[title]"><br>
