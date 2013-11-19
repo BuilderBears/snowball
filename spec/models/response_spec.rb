@@ -7,7 +7,7 @@ describe Response do
     url: "www.goodurl.com"
     )}
 
-  pending "is valid with a title and URL" do
+  it "is valid with a title and URL" do
     # This is marked as pending because it's a false positive. we have no validation yet.
     expect(response).to be_valid
   end
