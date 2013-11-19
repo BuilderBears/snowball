@@ -7,12 +7,13 @@ class ResponsesController < ApplicationController
   end
 
   def create
+    # in the future, needs to assign user_id
     response = Response.new(response_params)
 
     if response.save
-      redirect_to responses_path
+      redirect_to concern_path(response.concern)
     else
-      render 'new'
+      # fill in
     end
   end
 
@@ -33,6 +34,6 @@ class ResponsesController < ApplicationController
 
   private
   def response_params
-    params.require(:response).permit(:title, :url)
+    params.require(:response).permit(:title, :url, :concern_id)
   end
 end

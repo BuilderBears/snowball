@@ -5,3 +5,12 @@
 <p>URL: <%= response.url %></p>
 <p>Upvotes: <%= response.upvotes.count %></p>
 <% end %>
+
+<form method="post" action="/responses">
+  <label for="response_title">Response Title</label>
+  <input id="response_title" type="text" name="response[title]"><br>
+  <label for="response_url">Response URL</label>
+  <input id="response_url" type="text" name="response[url]"><br>
+  <input name="response[concern_id]" type="hidden" value="<%= @concern.id %>" >
+  <input type="submit">
+</form>

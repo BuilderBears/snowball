@@ -12,7 +12,7 @@ class ConcernsController < ApplicationController
     if concern.save
       redirect_to concerns_path
     else
-      render 'new'
+      render :new
     end
   end
 
