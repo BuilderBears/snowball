@@ -1,4 +1,5 @@
 <form method="post" action="/concerns">
+  <input name="concern[user_id]" type="hidden" value="<%= session["user_id"] %>" >
   <label for="title">Title</label>
   <input id="title" type="text" name="concern[title]"><br>
   <label for="description">Description</label>
@@ -7,5 +8,6 @@
   <input id="concern_response_title" type="text" name="concern[response_attributes][title]"><br>
   <label for="concern_response_url">Response URL</label>
   <input id="concern_response_url" type="text" name="concern[response_attributes][url]"><br>
+  <input name="concern[response_attributes][user_id]" type="hidden" value="<%= session["user_id"] %>" >
   <input type="submit">
 </form>

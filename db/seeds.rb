@@ -6,8 +6,8 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-vinney = User.create(name: 'Vinney', email: 'vinney@email.com', password: 'password')
-ruby_help = Concern.create(title: 'ruby-help', description: 'looking for ruby resources')
+vinney = User.create(name: 'Vinney', email: 'vinney@email.com', password: 'password', password_confirmation: 'password')
+ruby_help = Concern.create(title: 'ruby-help', description: 'looking for ruby resources', user_id: 1)
 ruby_response_one = Response.create(title: 'this one was helpful', url: 'www.google.com', concern_id: 1, user_id: 1)
 ruby_response_two = Response.create(title: 'i liked this site', url: 'www.facebook.com', concern_id: 1, user_id: 1)
 ruby_response_one.upvotes.create(user_id: vinney.id)

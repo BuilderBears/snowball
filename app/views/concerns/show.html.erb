@@ -1,9 +1,13 @@
 <p><strong>Title:</strong> <%= @concern.title %></p>
 <p><strong>Description:</strong> <%= @concern.description %></p>
 <% @concern.responses.each do |response| %>
-<p>Response Title: <%= response.title %></p>
-<p>URL: <%= response.url %></p>
-<p>Upvotes: <%= response.upvotes.count %></p>
+
+  <div class="well">
+  <p>Response Title: <%= response.title %></p>
+  <p>Added by: <%= link_to response.user.name, user_path(response.user) %></p>
+  <p>URL: <%= response.url %></p>
+  <p>Upvotes: <%= response.upvotes.count %></p>
+  </div>
 <% end %>
 
 <h2>Add a New Response</h2>
@@ -13,5 +17,6 @@
   <label for="response_url">Response URL</label>
   <input id="response_url" type="text" name="response[url]"><br>
   <input name="response[concern_id]" type="hidden" value="<%= @concern.id %>" >
+  <input name="response[user_id]" type="hidden" value="<%= session["user_id"] %>" >
   <input type="submit">
 </form>
