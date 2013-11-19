@@ -24,7 +24,7 @@ describe Response do
 
   it "is valid if a valid URL is supplied" do
     # change to check for validation after building url validation
-    expect(response.url).to match(/((([A-Za-z]{3,9}:(?:\/\/)?)(?:[-;:&=\+\$,\w]+@)?[A-Za-z0-9.-]+|(?:www.|[-;:&=\+\$,\w]+@)[A-Za-z0-9.-]+)((?:\/[\+~%\/.\w-_]*)?\??(?:[-\+=&;%@.\w_]*)#?(?:[\w]*))?)/)
+    expect(response).to be_valid
   end
 
   # it "accepts bit.ly-shortened URLs" do
@@ -35,7 +35,7 @@ describe Response do
   it "is invalid when supplied an invalid URL" do
     # change to check for validation after building url validation
     response.url = "1.4.p"
-    expect(response.url).not_to match(/((([A-Za-z]{3,9}:(?:\/\/)?)(?:[-;:&=\+\$,\w]+@)?[A-Za-z0-9.-]+|(?:www.|[-;:&=\+\$,\w]+@)[A-Za-z0-9.-]+)((?:\/[\+~%\/.\w-_]*)?\??(?:[-\+=&;%@.\w_]*)#?(?:[\w]*))?)/)
+    expect(response).to have(1).errors_on(:url)
   end
 
   it "belongs to a concern" do
