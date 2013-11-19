@@ -1,4 +1,6 @@
 class ConcernsController < ApplicationController
+  before_filter :authorize, only: [:new, :create, :edit, :update]
+
   def index
     @concerns = Concern.all
   end
