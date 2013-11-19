@@ -4,8 +4,8 @@
   <input id="title" type="text" name="concern[title]"><br>
   <label for="description">Description</label>
   <textarea id="description" name="concern[description]"></textarea><br>
-  <label for="concern_response_title">Response Title</label>
-  <input id="concern_response_title" type="text" name="concern[response_attributes][title]"><br>
+  <label for="concern_response_description">Response Description</label>
+  <textarea id="concern_response_description" name="concern[response_attributes][description]"></textarea><br>
   <label for="concern_response_url">Response URL</label>
   <input id="concern_response_url" type="text" name="concern[response_attributes][url]"><br>
   <input name="concern[response_attributes][user_id]" type="hidden" value="<%= session["user_id"] %>" >
