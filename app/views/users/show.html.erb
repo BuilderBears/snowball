@@ -4,8 +4,8 @@
 <% @user.concerns.each do |concern| %>
 
   <div class="well">
-  <p>Concern Title: <%= concern.title %></p>
-  <p>Responses: <% concern.responses.each do |response| %></p>
+  <p>Concern Title: <%= link_to concern.title, concern_path(concern) %></p>
+  <p>Responses for <%= concern.title %>: <% concern.responses.each do |response| %></p>
     <p>Response Title: <%= response.title %></p>
     <p>Response URL: <%= response.url %></p>
     <p>Response Upvotes: <%= response.upvotes.count %></p>
@@ -18,7 +18,7 @@
   <% @user.responses.each do |response| %>
   <div class="well">
     <p><strong>Response Title: <%= response.title %></strong></p>
-    <p>For Post called: <%= response.concern.title %></p>
+    <p>For Post called: <%= link_to response.concern.title, concern_path(response.concern) %></p>
     <p>Response URL: <%= response.url %></p>
     <p>Response Upvotes: <%= response.upvotes.count %></p>
     </div>
