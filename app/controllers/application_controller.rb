@@ -15,6 +15,10 @@ class ApplicationController < ActionController::Base
     helper_method :current_user
 
     def authorize
-      redirect_to login_url, alert: "Please login to view this page." if current_user.nil?
+      if request.xhr?
+        render :json => {:error => "login"}
+      else 
+        redirect_to login_url, alert: "Please login to view this page." if current_user.nil?
+      end
     end
 end

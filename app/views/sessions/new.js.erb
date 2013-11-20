@@ -1,0 +1,8 @@
+$("body").append("<%= j render 'modal' %>")
+$("#login").modal()
+$("#login form").ajaxForm(function(json){
+  if (json.login_status == 'success') {
+    $('#login').modal('hide');
+  }
+})
+

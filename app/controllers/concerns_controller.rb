@@ -1,5 +1,5 @@
 class ConcernsController < ApplicationController
-  before_filter :authorize, only: [:new, :create, :edit, :update]
+  before_filter :authorize, only: [:new, :create, :edit, :update, :upvote_response]
 
   def index
     @concerns = Concern.all
@@ -40,9 +40,7 @@ class ConcernsController < ApplicationController
     response.upvotes.create(user_id: user_id) 
     response.save
     new_upvote_count = response.upvotes.count
-
-    render :json => new_upvote_count
-
+    render :json => {:upvote_count => new_upvote_count}
   end
 
   private

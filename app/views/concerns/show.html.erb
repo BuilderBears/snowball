@@ -8,7 +8,7 @@
   <p>URL: <%= response.url %></p>
   <p>Description: <%= response.description %></p>
   <p>Upvotes: <span id="upvotecountspan<%=response.id%>"><%= response.upvotes.count %></span></p>
-  <input type="button" onclick="upvoteResponse(<%= response.id %>, <%= session["user_id"] %>)" value="Upvote">
+  <input type="button" value="Upvote" class="upvote" data-response-id="<%= response.id %>">
   </div>
 <% end %>
 
