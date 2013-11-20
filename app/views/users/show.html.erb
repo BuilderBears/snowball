@@ -5,21 +5,21 @@
 
   <div class="well">
   <p>Topic Title: <%= link_to topic.title, topic_path(topic) %></p>
-  <p>Responses for <%= topic.title %>: <% topic.responses.each do |response| %></p>
-    <p>Response Title: <%= response.title %></p>
-    <p>Response URL: <%= response.url %></p>
-    <p>Response Upvotes: <%= response.upvotes.count %></p>
+  <p>Suggestions for <%= topic.title %>: <% topic.suggestions.each do |suggestion| %></p>
+    <p>Suggestion Title: <%= suggestion.title %></p>
+    <p>Suggestion URL: <%= suggestion.url %></p>
+    <p>Suggestion Upvotes: <%= suggestion.upvotes.count %></p>
   <% end %>
   </div>
 <% end %>
 
 
-<h3><strong>Responses added by <%= @user.name %>:</strong></h3>
-  <% @user.responses.each do |response| %>
+<h3><strong>Suggestions added by <%= @user.name %>:</strong></h3>
+  <% @user.suggestions.each do |suggestion| %>
   <div class="well">
-    <p><strong>Response Title: <%= response.title %></strong></p>
-    <p>For Post called: <%= link_to response.topic.title, topic_path(response.topic) %></p>
-    <p>Response URL: <%= response.url %></p>
-    <p>Response Upvotes: <%= response.upvotes.count %></p>
+    <p><strong>Suggestion Title: <%= suggestion.title %></strong></p>
+    <p>For Post called: <%= link_to suggestion.topic.title, topic_path(suggestion.topic) %></p>
+    <p>Suggestion URL: <%= suggestion.url %></p>
+    <p>Suggestion Upvotes: <%= suggestion.upvotes.count %></p>
     </div>
   <% end %>

@@ -1,5 +1,5 @@
 class TopicsController < ApplicationController
-  before_filter :authorize, only: [:new, :create, :edit, :update, :upvote_response]
+  before_filter :authorize, only: [:new, :create, :edit, :update, :upvote_suggestion]
 
   def index
     @topics = Topic.all
@@ -33,18 +33,18 @@ class TopicsController < ApplicationController
     redirect_to topics_path
   end
 
-  def upvote_response
-    response_id = params["response_id"]
+  def upvote_suggestion
+    suggestion_id = params["suggestion_id"]
     user_id = session["user_id"]
-    response = Response.find(response_id)
-    response.upvotes.create(user_id: user_id) 
-    response.save
-    new_upvote_count = response.upvotes.count
+    suggestion = Suggestion.find(suggestion_id)
+    suggestion.upvotes.create(user_id: user_id) 
+    suggestion.save
+    new_upvote_count = suggestion.upvotes.count
     render :json => {:upvote_count => new_upvote_count}
   end
 
   private
   def topic_params
-    params.require(:topic).permit(:title, :description, :user_id, :response_attributes => [:title, :url, :user_id, :description])
+    params.require(:topic).permit(:title, :description, :user_id, :suggestion_attributes => [:title, :url, :user_id, :description])
   end
 end

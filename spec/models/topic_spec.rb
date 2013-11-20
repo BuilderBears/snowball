@@ -21,5 +21,5 @@ describe Topic do
     expect(topic.user).to_not be_nil
   end
 
-  it "can build a response onto itself"
+  it "can build a suggestion onto itself"
 end

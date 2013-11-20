@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
   has_many :topics
-  has_many :responses
+  has_many :suggestions
   has_many :upvotes
 
   has_secure_password
