@@ -7,8 +7,8 @@
   <p>Added by: <%= link_to response.user.name, user_path(response.user) %></p>
   <p>URL: <%= response.url %></p>
   <p>Description: <%= response.description %></p>
-  <p>Upvotes: <span id="upvotescountspan" data-responseid="<%= response.id %>"><%= response.upvotes.count %></span></p>
-  <input type="button" onclick="upvoteResponse()" value="Upvote">
+  <p>Upvotes: <span id="upvotecountspan<%=response.id%>"><%= response.upvotes.count %></span></p>
+  <input type="button" onclick="upvoteResponse(<%= response.id %>)" value="Upvote">
   </div>
 <% end %>
 

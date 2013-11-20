@@ -1,13 +1,11 @@
 // Place all the behaviors and hooks related to the matching controller here.
 // All this logic will automatically be available in application.js.
 
-function upvoteResponse(){
-  var upvote_count = parseInt($('#upvotecountspan').html());
-  var response_id = parseInt($('#upvotecountspan').data('responseid'));
-
-  var data = {"upvote_count":upvote_count, "response_id":response_id}
+function upvoteResponse(response_id){
+  var data = {"response_id":response_id}
   $.post('/concerns_upvote_response', data, function(new_upvote_count){
-    $('#upvotecountspan').html(new_upvote_count.upvote_count);
+    $('#upvotecountspan'+response_id.toString()).html(new_upvote_count);
+    console.log(new_upvote_count);
   })
 }
 

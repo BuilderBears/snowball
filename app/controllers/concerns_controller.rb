@@ -37,11 +37,12 @@ class ConcernsController < ApplicationController
     Rails.logger.info("PARAMS: #{params.inspect}")
     response_id = params["response_id"]
     user_id = params["user_id"]
-    response = Response.find_by_id(response_id)
+    response = Response.find(response_id)
     response.upvotes.create(user_id: user_id) 
     response.save
+    new_upvote_count = response.upvotes.count
 
-    render :json => concern
+    render :json => new_upvote_count
 
   end
 
