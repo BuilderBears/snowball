@@ -34,9 +34,8 @@ class ConcernsController < ApplicationController
   end
 
   def upvote_response
-    Rails.logger.info("PARAMS: #{params.inspect}")
     response_id = params["response_id"]
-    user_id = params["user_id"]
+    user_id = session["user_id"]
     response = Response.find(response_id)
     response.upvotes.create(user_id: user_id) 
     response.save
