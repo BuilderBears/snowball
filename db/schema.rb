@@ -13,7 +13,7 @@
 
 ActiveRecord::Schema.define(version: 20131119231625) do
 
-  create_table "responses", force: true do |t|
+  create_table "suggestions", force: true do |t|
     t.string   "title"
     t.string   "url"
     t.datetime "created_at"
@@ -34,13 +34,13 @@ ActiveRecord::Schema.define(version: 20131119231625) do
   add_index "topics", ["user_id"], name: "index_topics_on_user_id"
 
   create_table "upvotes", force: true do |t|
-    t.integer  "response_id"
+    t.integer  "suggestion_id"
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "upvotes", ["response_id"], name: "index_upvotes_on_response_id"
+  add_index "upvotes", ["suggestion_id"], name: "index_upvotes_on_suggestion_id"
   add_index "upvotes", ["user_id"], name: "index_upvotes_on_user_id"
 
   create_table "users", force: true do |t|
