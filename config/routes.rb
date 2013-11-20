@@ -8,13 +8,13 @@ Snowball::Application.routes.draw do
 
   resources :responses
 
-  resources :concerns
+  resources :topics
 
   resources :sessions
 
   root 'welcome#index'
 
-  post "concerns_upvote_response" => "concerns#upvote_response"
+  post "topics_upvote_response" => "topics#upvote_response"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

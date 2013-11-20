@@ -1,6 +1,6 @@
-<p><strong>Title:</strong> <%= @concern.title %></p>
-<p><strong>Description:</strong> <%= @concern.description %></p>
-<% @concern.responses.each do |response| %>
+<p><strong>Title:</strong> <%= @topic.title %></p>
+<p><strong>Description:</strong> <%= @topic.description %></p>
+<% @topic.responses.each do |response| %>
 
   <div class="well">
   <p>Response Title: <%= response.title %></p>
@@ -18,7 +18,7 @@
   <input id="response_url" type="text" name="response[url]"><br>
   <label for="response_description">Description</label>
   <textarea id="response_description" name="response[description]"></textarea>
-  <input name="response[concern_id]" type="hidden" value="<%= @concern.id %>" >
+  <input name="response[topic_id]" type="hidden" value="<%= @topic.id %>" >
   <input name="response[user_id]" type="hidden" value="<%= session["user_id"] %>" >
   <input type="submit" value="Add Response">
 </form>

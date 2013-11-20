@@ -38,10 +38,10 @@ describe Response do
     expect(response).to have(1).errors_on(:url)
   end
 
-  it "belongs to a concern" do
+  it "belongs to a topic" do
     # Needs work.
     response = Response.new(title: "test title", url: "www.example.com")
-    expect(response.concern).to_not be_nil
+    expect(response.topic).to_not be_nil
   end
 
 end

@@ -11,7 +11,7 @@
 
 function upvoteResponse(response_id){
   var data = {"response_id":response_id}
-  $.post('/concerns_upvote_response', data, function(json){
+  $.post('/topics_upvote_response', data, function(json){
     // the below comes from authorize in app_controller
     if (json.error == 'login'){
       jsLogin();

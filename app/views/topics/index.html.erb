@@ -1,0 +1,10 @@
+<h1>All Posts</h1>
+<ul>
+  <% @topics.each do |topic| %>
+    <li>
+    <p><strong>Title:</strong> <%= link_to topic.title, topic_path(topic) %></p>
+    <p><strong>Description:</strong> <%= topic.description %></p>
+    <p><strong>Posted by:</strong> <%=link_to topic.user.name, user_path(topic.user) %></p>
+    </li>
+  <% end %>
+</ul>

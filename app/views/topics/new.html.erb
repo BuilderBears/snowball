@@ -1,0 +1,13 @@
+<form method="post" action="/topics">
+  <input name="topic[user_id]" type="hidden" value="<%= session["user_id"] %>" >
+  <label for="title">Title</label>
+  <input id="title" type="text" name="topic[title]"><br>
+  <label for="description">Description</label>
+  <textarea id="description" name="topic[description]"></textarea><br>
+  <label for="topic_response_description">Response Description</label>
+  <textarea id="topic_response_description" name="topic[response_attributes][description]"></textarea><br>
+  <label for="topic_response_url">Response URL</label>
+  <input id="topic_response_url" type="text" name="topic[response_attributes][url]"><br>
+  <input name="topic[response_attributes][user_id]" type="hidden" value="<%= session["user_id"] %>" >
+  <input type="submit">
+</form>

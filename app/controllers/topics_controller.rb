@@ -1,36 +1,36 @@
-class ConcernsController < ApplicationController
+class TopicsController < ApplicationController
   before_filter :authorize, only: [:new, :create, :edit, :update, :upvote_response]
 
   def index
-    @concerns = Concern.all
+    @topics = Topic.all
   end
 
   def new
   end
 
   def create
-    concern = Concern.new(concern_params)
+    topic = Topic.new(topic_params)
 
-    if concern.save
-      redirect_to concerns_path
+    if topic.save
+      redirect_to topics_path
     else
       render :new
     end
   end
 
   def show
-    @concern = Concern.find(params[:id])
+    @topic = Topic.find(params[:id])
   end
 
   def edit
-    @concern = Concern.find(params[:id])
+    @topic = Topic.find(params[:id])
   end
 
   def update
-    @concern = Concern.find(params[:id])
-    @concern.update(concern_params)
+    @topic = Topic.find(params[:id])
+    @topic.update(topic_params)
 
-    redirect_to concerns_path
+    redirect_to topics_path
   end
 
   def upvote_response
@@ -44,7 +44,7 @@ class ConcernsController < ApplicationController
   end
 
   private
-  def concern_params
-    params.require(:concern).permit(:title, :description, :user_id, :response_attributes => [:title, :url, :user_id, :description])
+  def topic_params
+    params.require(:topic).permit(:title, :description, :user_id, :response_attributes => [:title, :url, :user_id, :description])
   end
 end

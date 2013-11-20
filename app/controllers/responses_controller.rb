@@ -15,7 +15,7 @@ class ResponsesController < ApplicationController
     # refactor to do a different action when receiving .json
     # using the respond_to method (ex. generic scaffold code)
     if response.save
-      redirect_to concern_path(response.concern)
+      redirect_to topic_path(response.topic)
     else
       # fill in
     end
@@ -38,6 +38,6 @@ class ResponsesController < ApplicationController
 
   private
   def response_params
-    params.require(:response).permit(:description, :url, :concern_id, :user_id, :title)
+    params.require(:response).permit(:description, :url, :topic_id, :user_id, :title)
   end
 end
