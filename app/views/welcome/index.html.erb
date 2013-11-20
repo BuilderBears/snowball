@@ -1,0 +1,11 @@
+<div class="jumbotron center">
+  <h1>GoodGuides</h1>
+  <% if user_signed_in? %>
+    <!-- # do something -->
+  <% else %>
+    <p>
+      <%= link_to "Log in", login_path, class: "btn btn-default btn-lg" %>
+      <%= link_to "Sign up", signup_path, class: "btn btn-primary btn-lg" %>
+    </p>
+  <% end %>
+</div>
