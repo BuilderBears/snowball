@@ -1,4 +1,4 @@
-class Response < ActiveRecord::Base
+class Suggestion < ActiveRecord::Base
   include LinkScraper
 
   has_many :upvotes

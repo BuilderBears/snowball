@@ -13,25 +13,25 @@
 
 ActiveRecord::Schema.define(version: 20131119231625) do
 
-  create_table "concerns", force: true do |t|
-    t.string   "title"
-    t.string   "description"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "user_id"
-  end
-
-  add_index "concerns", ["user_id"], name: "index_concerns_on_user_id"
-
   create_table "responses", force: true do |t|
     t.string   "title"
     t.string   "url"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "concern_id"
+    t.integer  "topic_id"
     t.integer  "user_id"
     t.string   "description"
   end
+
+  create_table "topics", force: true do |t|
+    t.string   "title"
+    t.string   "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "user_id"
+  end
+
+  add_index "topics", ["user_id"], name: "index_topics_on_user_id"
 
   create_table "upvotes", force: true do |t|
     t.integer  "response_id"

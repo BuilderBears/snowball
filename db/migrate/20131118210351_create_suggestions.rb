@@ -1,6 +1,6 @@
-class CreateResponses < ActiveRecord::Migration
+class CreateSuggestions < ActiveRecord::Migration
   def change
-    create_table :responses do |t|
+    create_table :suggestions do |t|
       t.string :name
       t.string :url
 
