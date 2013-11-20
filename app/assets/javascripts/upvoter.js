@@ -5,7 +5,6 @@ function upvoteResponse(response_id){
   var data = {"response_id":response_id}
   $.post('/concerns_upvote_response', data, function(new_upvote_count){
     $('#upvotecountspan'+response_id.toString()).html(new_upvote_count);
-    console.log(new_upvote_count);
   })
 }
 
