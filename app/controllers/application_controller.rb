@@ -18,7 +18,8 @@ class ApplicationController < ActionController::Base
       if request.xhr? && !user_signed_in?
         render :json => {:error => "login"}
       else 
-        redirect_to login_url, alert: "Please login to view this page." if current_user.nil?
+        # this never happens
+        # redirect_to login_url, alert: "Please login to view this page." if current_user.nil?
       end
     end
 end
