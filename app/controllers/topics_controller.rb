@@ -18,8 +18,16 @@ class TopicsController < ApplicationController
     end
   end
 
+  def sort_suggestions
+    @topic = Topic.find(params[:id])
+    @topic.suggestions.sort_by do |suggestion| 
+      suggestion.upvotes.count
+    end.reverse!
+  end
+
   def show
     @topic = Topic.find(params[:id])
+    @sorted_suggestions = sort_suggestions
   end
 
   def edit

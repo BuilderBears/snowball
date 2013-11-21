@@ -15,7 +15,7 @@
 
 
 <h3><strong>Suggestions added by <%= @user.name %>:</strong></h3>
-  <% @user.suggestions.each do |suggestion| %>
+  <% @sorted_suggestions.each do |suggestion| %>
   <div class="well">
     <p><strong>Suggestion Title: <%= suggestion.title %></strong></p>
     <p>For Post called: <%= link_to suggestion.topic.title, topic_path(suggestion.topic) %></p>
