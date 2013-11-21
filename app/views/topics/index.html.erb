@@ -4,6 +4,13 @@
     <article>
       <h3 class="topic-link"><%= link_to topic.title, topic_path(topic) %> <span class="name-link"> <%=link_to "posted by: #{topic.user.name}", user_path(topic.user) %></span></h3>
       <p><strong>Description:</strong> <%= topic.description %></p>
+          <% if !topic.tags.empty? %>
+      <p><strong>Tags:</strong>
+        <% topic.tags.all.each do |tag| %>
+          <%= link_to tag.name, tag_path(tag) %>,  
+        <% end %>
+      </p>
+    <% end %>
       <p><strong>Number of Suggestions: </strong><%=topic.suggestions.count %></p>
     </article>
   <% end %>

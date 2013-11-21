@@ -5,7 +5,6 @@ function upvoteSuggestion(suggestion_id){
     if (json.error == 'login'){
       jsLogin();
       $(window).on("login:success", function(){
-        console.log("just fired login success")
         upvoteSuggestion(suggestion_id);
       });
     } else {
