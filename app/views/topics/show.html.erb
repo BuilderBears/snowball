@@ -1,9 +1,9 @@
 <h1><%= @topic.title %></h1>
 <h3>Description: <%= @topic.description %></h3>
-<%= if !@topic.tags.empty? %>
+<% if !@topic.tags.empty? %>
   <h3>Tags: </h3>
   <ul>
-    <% @topic.tags.all.each do |tag| %>
+    <% @topic.tags.each do |tag| %>
       <li><%= link_to tag.name, tag_path(tag) %>,</li>  
     <% end %>
   </ul>
