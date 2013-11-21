@@ -5,9 +5,11 @@ function postSuggestion(){
       jsLogin();
       $(window).on("login:success", function(){
         postSuggestion();
+        window.location.reload();
       });
     } else {
-      window.location = 'suggestions/new'
+      // window.location = 'topic/';
+      // window.location.reload();
     }
   })  
 }

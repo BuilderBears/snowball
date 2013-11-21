@@ -21,8 +21,7 @@
 <% end %>
 
 <% if !user_signed_in? %>
-  <%= link_to "Log in to post a new suggestion!", login_path, class: "btn btn-primary btn-lg", id: "new_suggestion" %>
- <!--  make this ajax/modal where it pops up and stays on page and renders the sessions page -->
+  <a href="/login/new" class="btn btn-primary btn-lg" id="new_suggestion" data-topic-id="<%= @topic.id %>">Log in to post a new suggestion!</a>
 <% else %>
   <h2>Add a new suggestion to <%= @topic.title%></h2>
   <div class="well">
