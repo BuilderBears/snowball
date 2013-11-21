@@ -1,0 +1,19 @@
+.footer {
+  height: 150px;
+  clear: both;
+  padding-top: 20px;
+}
+
+.footer-links {
+  position: relative;
+  top: -15px;
+}
+
+a:hover {
+  text-decoration: none;
+  color: #4b6496;
+}
+
+.twitter-links {
+  font-weight: 300;
+}

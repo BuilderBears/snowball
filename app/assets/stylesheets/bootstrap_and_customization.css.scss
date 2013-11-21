@@ -1,1 +1,36 @@
 @import 'bootstrap';
+
+.top-spacer {
+  margin-top: 65px;
+}
+
+article {
+  border-bottom: 1px solid #efefef;
+}
+
+.topic-link a:hover {
+  text-decoration: none;
+  color: #4b6496;
+}
+
+.name-link a {
+  color: #999;
+  font-size: .6em;
+  font-weight: 300;
+}
+
+.name-link a:hover {
+  text-decoration: none;
+  color: #777;
+}
+
+.suggestion-name-link a {
+  color: #999;
+  font-size: 1.0em;
+  font-weight: 300;
+}
+
+.suggestion-name-link a:hover {
+  text-decoration: none;
+  color: #777;
+}

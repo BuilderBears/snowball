@@ -1,10 +1,11 @@
 <h1>All Posts</h1>
-<ul>
+<section id="topics">
   <% @topics.each do |topic| %>
-    <li>
-    <p><strong>Title:</strong> <%= link_to topic.title, topic_path(topic) %></p>
-    <p><strong>Description:</strong> <%= topic.description %></p>
-    <p><strong>Posted by:</strong> <%=link_to topic.user.name, user_path(topic.user) %></p>
-    </li>
+    <article>
+      <h3 class="topic-link"><%= link_to topic.title, topic_path(topic) %> <span class="name-link"> <%=link_to "posted by: #{topic.user.name}", user_path(topic.user) %></span></h3>
+      <p><strong>Description:</strong> <%= topic.description %></p>
+      <p><strong>Number of Suggestions: </strong><%=topic.suggestions.count %></p>
+    </article>
   <% end %>
-</ul>
+</section>
+

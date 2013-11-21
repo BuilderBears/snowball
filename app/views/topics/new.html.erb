@@ -1,3 +1,4 @@
+<div class="well">
 <form method="post" action="/topics">
   <input name="topic[user_id]" type="hidden" value="<%= session["user_id"] %>" >
   <label for="title">Title</label>
@@ -11,3 +12,4 @@
   <input name="topic[suggestion_attributes][user_id]" type="hidden" value="<%= session["user_id"] %>" >
   <input type="submit">
 </form>
+</div>

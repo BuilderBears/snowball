@@ -1,9 +1,9 @@
-<p><strong>Title:</strong> <%= @topic.title %></p>
-<p><strong>Description:</strong> <%= @topic.description %></p>
+<h1><%= @topic.title %></h1>
+<h3>Description: <%= @topic.description %></h3>
 <% @sorted_suggestions.each do |suggestion| %>
-  <div class="well">
+<div class="well">
   <p>Suggestion Title: <%= suggestion.title %></p>
-  <p>Added by: <%= link_to suggestion.user.name, user_path(suggestion.user) %></p>
+  <p class="suggestion-name-link">Added by: <%= link_to "#{suggestion.user.name}", user_path(suggestion.user) %></p>
   <p>URL: <%= suggestion.url %></p>
   <p>Description: <%= suggestion.description %></p>
   <p>Upvotes: <span id="upvotecountspan<%=suggestion.id%>"><%= suggestion.upvotes.count %></span></p>
@@ -11,7 +11,8 @@
   </div>
 <% end %>
 
-<h2>Add a New Suggestion</h2>
+<h2>Add a new suggestion to <%= @topic.title%></h2>
+<div class="well">
 <form method="post" action="/suggestions">
   <label for="suggestion_url">Suggestion URL</label>
   <input id="suggestion_url" type="text" name="suggestion[url]"><br>
@@ -21,4 +22,5 @@
   <input name="suggestion[user_id]" type="hidden" value="<%= session["user_id"] %>" >
   <input type="submit" value="Add Suggestion">
 </form>
+</div>
 
