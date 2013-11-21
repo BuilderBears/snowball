@@ -15,7 +15,7 @@ function upvoteSuggestion(suggestion_id){
 }
 
 $(function(){
-  $("input.upvote").click(function(){
+  $("button.upvote").click(function(){
     upvoteSuggestion($(this).data("suggestion-id"))
   })
 })

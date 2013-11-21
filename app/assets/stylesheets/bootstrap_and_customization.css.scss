@@ -1,20 +1,35 @@
+@import url(http://fonts.googleapis.com/css?family=Lato:400,700);
+
+$body-bg: #ecf0f1;
+$font-family-sans-serif: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$navbar-height: 45px;
+$navbar-default-bg: #34495e;
+$navbar-default-brand-color: white;
+$brand-primary: #3498db;
+$navbar-default-link-color: white;
+$jumbotron-bg: white;
+
 @import 'bootstrap';
 
 .top-spacer {
-  margin-top: 65px;
+  margin-top: 45px;
 }
 
 article {
-  border-bottom: 1px solid #efefef;
+  border-bottom: 1px solid #c6d2df;
+}
+
+.topic-link a {
+  color: #2980b9;
 }
 
 .topic-link a:hover {
   text-decoration: none;
-  color: #4b6496;
+  color: #9b59b6;
 }
 
 .name-link a {
-  color: #999;
+  color: #95a5a6;
   font-size: .6em;
   font-weight: 300;
 }
@@ -33,4 +48,14 @@ article {
 .suggestion-name-link a:hover {
   text-decoration: none;
   color: #777;
+}
+
+#suggestion-content {
+  max-width: 80%;
+  float: left;
+}
+
+#upvote-button {
+  max-width: 20%;
+  float: right;
 }
