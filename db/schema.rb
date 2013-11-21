@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131119231625) do
+ActiveRecord::Schema.define(version: 20131121180234) do
 
   create_table "suggestions", force: true do |t|
     t.string   "title"
@@ -22,6 +22,20 @@ ActiveRecord::Schema.define(version: 20131119231625) do
     t.integer  "user_id"
     t.string   "description"
   end
+
+  create_table "tags", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "topic_tags", force: true do |t|
+    t.integer "topic_id"
+    t.integer "tag_id"
+  end
+
+  add_index "topic_tags", ["tag_id"], name: "index_topic_tags_on_tag_id"
+  add_index "topic_tags", ["topic_id"], name: "index_topic_tags_on_topic_id"
 
   create_table "topics", force: true do |t|
     t.string   "title"
