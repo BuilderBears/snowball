@@ -1,26 +1,31 @@
 <h1><%= @topic.title %></h1>
-<h3>Description: <%= @topic.description %></h3>
+<h3><%= @topic.description %></h3>
 <% @sorted_suggestions.each do |suggestion| %>
-<div class="well">
-  <p>Suggestion Title: <%= suggestion.title %></p>
-  <p class="suggestion-name-link">Added by: <%= link_to "#{suggestion.user.name}", user_path(suggestion.user) %></p>
-  <p>URL: <%= suggestion.url %></p>
-  <p>Description: <%= suggestion.description %></p>
-  <p>Upvotes: <span id="upvotecountspan<%=suggestion.id%>"><%= suggestion.upvotes.count %></span></p>
-  <input type="button" value="Upvote" class="upvote" data-suggestion-id="<%= suggestion.id %>">
+  <div class="well clearfix">
+    <div id="suggestion-content">
+      <p><%= link_to "#{suggestion.title}", suggestion.url %> <span class="suggestion-name-link"><%= link_to " added by: #{suggestion.user.name}", user_path(suggestion.user) %></span></p>
+      <p><%= suggestion.description %></p>
+    </div>
+    
+    <div id="upvote-button">
+      <span id="upvotecountspan<%=suggestion.id%>"><%= suggestion.upvotes.count %></span> <%= suggestion.upvotes.count == 1 ? "upvote" : "upvotes" %> | 
+      <button type="button" class="upvote" data-suggestion-id="<%= suggestion.id %>">
+        <span class="glyphicon glyphicon-arrow-up"></span>
+      </button>
+    </div>
   </div>
 <% end %>
 
 <h2>Add a new suggestion to <%= @topic.title%></h2>
-<div class="well">
-<form method="post" action="/suggestions">
-  <label for="suggestion_url">Suggestion URL</label>
-  <input id="suggestion_url" type="text" name="suggestion[url]"><br>
-  <label for="suggestion_description">Description</label>
-  <textarea id="suggestion_description" name="suggestion[description]"></textarea>
-  <input name="suggestion[topic_id]" type="hidden" value="<%= @topic.id %>" >
-  <input name="suggestion[user_id]" type="hidden" value="<%= session["user_id"] %>" >
-  <input type="submit" value="Add Suggestion">
-</form>
-</div>
+  <div class="well">
+    <form method="post" action="/suggestions">
+      <label for="suggestion_url">Suggestion URL</label>
+      <input id="suggestion_url" type="text" name="suggestion[url]"><br>
+      <label for="suggestion_description">Description</label>
+      <textarea id="suggestion_description" name="suggestion[description]"></textarea>
+      <input name="suggestion[topic_id]" type="hidden" value="<%= @topic.id %>" >
+      <input name="suggestion[user_id]" type="hidden" value="<%= session["user_id"] %>" >
+      <input type="submit" value="Add Suggestion">
+    </form>
+  </div>
 
