@@ -1,16 +1,11 @@
 <div class="well">
 <form method="post" action="/topics">
   <input name="topic[user_id]" type="hidden" value="<%= session["user_id"] %>" >
-  <label for="title">Title</label>
+  <label for="title">Title</label><br>
   <input id="title" type="text" name="topic[title]"><br>
-  <label for="description">Description</label>
+  <label for="description">Description</label><br>
   <textarea id="description" name="topic[description]"></textarea><br>
-  <label for="topic_suggestion_description">Suggestion Description</label>
-  <textarea id="topic_suggestion_description" name="topic[suggestion_attributes][description]"></textarea><br>
-  <label for="topic_suggestion_url">Suggestion URL</label>
-  <input id="topic_suggestion_url" type="text" name="topic[suggestion_attributes][url]"><br>
-  <input name="topic[suggestion_attributes][user_id]" type="hidden" value="<%= session["user_id"] %>" >
-  <label for="topic_tags">Tags / Categories (comma, separated, underscores_for_multiple_words)</label>
+  <label for="topic_tags">Tags / Categories (comma, separated, underscores_for_multiple_words)</label><br>
   <input id="topic_tags" name="topic[tag_names]" type="text"><br>
   <input type="submit">
 </form>
