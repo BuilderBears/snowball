@@ -6,6 +6,9 @@ class TopicsController < ApplicationController
   end
 
   def new
+    # if !user_signed_in?
+    #   render :json => {:error => "login"}
+    # end
   end
 
   def create
