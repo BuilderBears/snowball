@@ -17,7 +17,7 @@ class SuggestionsController < ApplicationController
     if suggestion.save
       redirect_to topic_path(suggestion.topic)
     else
-      # fill in
+      redirect_to topic_path(suggestion.topic)
     end
   end
 

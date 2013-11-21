@@ -4,11 +4,10 @@ function postTopic(){
     if (json.error == 'login'){
       jsLogin();
       $(window).on("login:success", function(){
-        console.log("just fired login success")
         postTopic();
       });
     } else {
-      
+      window.location = '/topics/new'
     }
   })  
 }
