@@ -15,12 +15,12 @@
 <div class="well">
 <form method="post" action="/suggestions">
   <label for="suggestion_url">Suggestion URL</label>
-  <input id="suggestion_url" type="text" name="suggestion[url]"><br>
+  <input id="suggestion_url" data-suggestion-url="<%= suggestion.url %>" type="text" name="suggestion[url]"><br>
   <label for="suggestion_description">Description</label>
   <textarea id="suggestion_description" name="suggestion[description]"></textarea>
   <input name="suggestion[topic_id]" type="hidden" value="<%= @topic.id %>" >
   <input name="suggestion[user_id]" type="hidden" value="<%= session["user_id"] %>" >
-  <input type="submit" value="Add Suggestion">
+  <input id="new_suggestion" type="submit" value="Add Suggestion">
 </form>
 </div>
 
