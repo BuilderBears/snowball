@@ -1,0 +1,6 @@
+<h2>Topics tagged with "<i><%= @tag.name %></i>":</h2>
+<ul>
+  <% @tag.topics.each do |topic| %>
+    <li><%= link_to topic.title, topic_path(topic) %></li>
+  <% end %>  
+</ul>
