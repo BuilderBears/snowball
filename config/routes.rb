@@ -15,6 +15,8 @@ Snowball::Application.routes.draw do
 
   resources :sessions
 
+  resources :tags
+
   root 'welcome#index'
 
   post "topics_upvote_suggestion" => "topics#upvote_suggestion"

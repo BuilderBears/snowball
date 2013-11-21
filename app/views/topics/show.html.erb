@@ -1,7 +1,16 @@
 <h1><%= @topic.title %></h1>
 <h3>Description: <%= @topic.description %></h3>
+<% if !@topic.tags.empty? %>
+  <h3>Tags: </h3>
+  <ul>
+    <% @topic.tags.each do |tag| %>
+      <li><%= link_to tag.name, tag_path(tag) %>,</li>  
+    <% end %>
+  </ul>
+  <% end %>
 <% @sorted_suggestions.each do |suggestion| %>
 <div class="well">
+
   <p>Suggestion Title: <%= suggestion.title %></p>
   <p class="suggestion-name-link">Added by: <%= link_to "#{suggestion.user.name}", user_path(suggestion.user) %></p>
   <p>URL: <%= suggestion.url %></p>

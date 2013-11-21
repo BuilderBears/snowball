@@ -10,6 +10,8 @@
   <label for="topic_suggestion_url">Suggestion URL</label>
   <input id="topic_suggestion_url" type="text" name="topic[suggestion_attributes][url]"><br>
   <input name="topic[suggestion_attributes][user_id]" type="hidden" value="<%= session["user_id"] %>" >
+  <label for="topic_tags">Tags / Categories (comma, separated, underscores_for_multiple_words)</label>
+  <input id="topic_tags" name="topic[tag_names]" type="text"><br>
   <input type="submit">
 </form>
 </div>

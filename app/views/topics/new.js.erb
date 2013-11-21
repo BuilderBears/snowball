@@ -1,0 +1,13 @@
+// came from sessions.js
+$("body").append("<%= j render 'modal' %>")
+$("#login").modal()
+$("#login form").ajaxForm(function(json){
+  if (json.login_status == 'success') {
+    $('#login').modal('hide');
+    $(window).trigger("login:success")
+
+  } else {
+    // login wasn't successful
+    // prompt to try again or sign up
+  }
+})
