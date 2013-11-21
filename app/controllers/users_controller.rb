@@ -1,7 +1,15 @@
 class UsersController < ApplicationController
 
+  def sort_suggestions
+    @user = User.find(params[:id])
+    @user.suggestions.sort_by do |suggestion| 
+      suggestion.upvotes.count
+    end.reverse!
+  end
+
   def show
     @user = User.find(params[:id])
+    @sorted_suggestions = sort_suggestions
   end
   
   def new

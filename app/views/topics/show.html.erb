@@ -1,7 +1,6 @@
 <p><strong>Title:</strong> <%= @topic.title %></p>
 <p><strong>Description:</strong> <%= @topic.description %></p>
-<% @topic.suggestions.each do |suggestion| %>
-
+<% @sorted_suggestions.each do |suggestion| %>
   <div class="well">
   <p>Suggestion Title: <%= suggestion.title %></p>
   <p>Added by: <%= link_to suggestion.user.name, user_path(suggestion.user) %></p>
