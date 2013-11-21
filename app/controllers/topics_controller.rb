@@ -45,6 +45,6 @@ class TopicsController < ApplicationController
 
   private
   def topic_params
-    params.require(:topic).permit(:title, :description, :user_id, :suggestion_attributes => [:title, :url, :user_id, :description])
+    params.require(:topic).permit(:title, :description, :user_id, :tag_names, :suggestion_attributes => [:title, :url, :user_id, :description])
   end
 end
