@@ -15,11 +15,6 @@ class ApplicationController < ActionController::Base
     helper_method :current_user
 
     def authorize
-      if request.xhr? && !user_signed_in?
-        render :json => {:error => "login"}
-      else 
-        # this never happens
-        # redirect_to login_url, alert: "Please login to view this page." if current_user.nil?
-      end
+      render :json => {:error => "login"} if !user_signed_in?
     end
 end
