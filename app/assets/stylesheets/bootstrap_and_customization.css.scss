@@ -72,3 +72,14 @@ article {
   max-width: 20%;
   float: right;
 }
+
+.modal-content {
+  position: fixed;
+  width: 400px;
+  height: 400px;
+  top: 25%;
+  left: 50%;
+  margin-top: -25px;
+  margin-left: -200px;
+  padding: 20px;
+}
