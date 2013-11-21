@@ -7,7 +7,7 @@ function postTopic(){
         postTopic();
       });
     } else {
-      window.location = '/topics/new'
+      window.location = '/topics/new';
     }
   })  
 }

@@ -7,6 +7,7 @@ function upvoteSuggestion(suggestion_id){
       $(window).on("login:success", function(){
         console.log("just fired login success")
         upvoteSuggestion(suggestion_id);
+        window.location.reload();
       });
     } else {
       $('#upvotecountspan'+suggestion_id.toString()).html(json.upvote_count);
