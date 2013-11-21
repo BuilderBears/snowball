@@ -5,6 +5,12 @@
     <p><strong>Title:</strong> <%= link_to topic.title, topic_path(topic) %></p>
     <p><strong>Description:</strong> <%= topic.description %></p>
     <p><strong>Posted by:</strong> <%=link_to topic.user.name, user_path(topic.user) %></p>
-    </li>
+    <% if !topic.tags.empty? %>
+      <p><strong>Tags:</strong>
+        <% topic.tags.all.each do |tag| %>
+          <%= link_to tag.name, tag_path(tag) %>,  
+        <% end %>
+      </p>
+    <% end %>
   <% end %>
 </ul>

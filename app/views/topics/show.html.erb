@@ -2,7 +2,7 @@
 <p><strong>Description:</strong> <%= @topic.description %></p>
 <p><strong>Tags:</strong> 
 <% @topic.tags.all.each do |tag| %>
-  <%= tag.name %>,  
+  <%= link_to tag.name, tag_path(tag) %>,  
 <% end %>
 </p>
 <% @topic.suggestions.each do |suggestion| %>
