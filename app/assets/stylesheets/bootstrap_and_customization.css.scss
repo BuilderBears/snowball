@@ -34,7 +34,7 @@ body, html {
 }
 
 .jumbotron {
-  margin-top: 45px;
+  margin-top: 60px;
 }
 
 .top-spacer {
@@ -99,4 +99,25 @@ article {
 
 .navbar-form {
   width: 400px;
+}
+
+#home-page-logo {
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+#home-search-form {
+  margin: 0 auto;
+  width: 700px;
+  height: 30px;
+}
+
+#home-search-form input {
+  background-color: #ecf0f1;
+}
+
+#home-page-input-group {
+  margin: 0 auto;
+  width: 650px;
+  height: 20px;
 }
