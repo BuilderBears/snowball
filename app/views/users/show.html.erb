@@ -3,9 +3,9 @@
 <h3><%= @user.name %>'s Topics</h3>
 <% @user.topics.each do |topic| %>
   <div class="well">
-  <p>Topic Title: <%= link_to topic.title, topic_path(topic) %></p>
+  <p><%= link_to topic.title, topic_path(topic) %></p>
   <% if !topic.tags.empty? %>
-  <p>Topic Tags: <% topic.tags.each do |tag| %>
+  <p>Tags: <% topic.tags.each do |tag| %>
     <%= link_to tag.name, tag_path(tag) %>,
     <% end %>
   <% end %></p> 
