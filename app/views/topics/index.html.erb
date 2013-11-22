@@ -1,9 +1,7 @@
 <h1 style="color: #7f8c8d;">All Topics</h1>
 
-<div class="row">
-  <div class="col-md-4">
     <section id="topics">
-    <% @column_1.each do |topic| %>
+    <% @sorted_topics.each do |topic| %>
     <article>
       <h3 class="topic-link"><%= link_to topic.title, topic_path(topic) %> <span class="name-link"> <%=link_to "posted by: #{topic.user.name}", user_path(topic.user) %></span></h3>
       <p><strong>Description:</strong> <%= topic.description %></p>
@@ -14,45 +12,7 @@
         <% end %>
       </p>
     <% end %>
-      <p><strong>Number of Suggestions: </strong><%=topic.suggestions.count %></p>
+      <p><strong> <%=topic.suggestions.count %></strong> <%=topic.suggestions.count == 1 ? "suggestion" : "suggestions" %></p>
     </article>
     <% end %>
     </section>
-  </div>
-  <div class="col-md-4">
-    <section id="topics">
-    <% @column_2.each do |topic| %>
-    <article>
-      <h3 class="topic-link"><%= link_to topic.title, topic_path(topic) %> <span class="name-link"> <%=link_to "posted by: #{topic.user.name}", user_path(topic.user) %></span></h3>
-      <p><strong>Description:</strong> <%= topic.description %></p>
-          <% if !topic.tags.empty? %>
-      <p><strong>Tags:</strong>
-        <% topic.tags.all.each do |tag| %>
-          <%= link_to tag.name, tag_path(tag) %>,  
-        <% end %>
-      </p>
-    <% end %>
-      <p><strong>Number of Suggestions: </strong><%=topic.suggestions.count %></p>
-    </article>
-  <% end %>
-  </section>
-  </div>
-  <div class="col-md-4">
-    <section id="topics">
-    <% @column_3.each do |topic| %>
-    <article>
-      <h3 class="topic-link"><%= link_to topic.title, topic_path(topic) %> <span class="name-link"> <%=link_to "posted by: #{topic.user.name}", user_path(topic.user) %></span></h3>
-      <p><strong>Description:</strong> <%= topic.description %></p>
-          <% if !topic.tags.empty? %>
-      <p><strong>Tags:</strong>
-        <% topic.tags.all.each do |tag| %>
-          <%= link_to tag.name, tag_path(tag) %>,  
-        <% end %>
-      </p>
-    <% end %>
-      <p><strong>Number of Suggestions: </strong><%=topic.suggestions.count %></p>
-    </article>
-  <% end %>
-  </section>
-  </div>
-</div>
