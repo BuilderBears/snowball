@@ -5,10 +5,8 @@ $("#login form").ajaxForm(function(json){
   if (json.login_status == 'success') {
     $('#login').modal('hide');
     $(window).trigger("login:success")
-
-  } else {
-    // login wasn't successful
-    // prompt to try again or sign up
+  } else if (json.login_status == 'failure') {
+    $(window).trigger("login:failure")
   }
 })
 
