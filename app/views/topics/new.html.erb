@@ -2,11 +2,11 @@
 <form method="post" action="/topics">
   <input name="topic[user_id]" type="hidden" value="<%= session["user_id"] %>" >
   <label for="title">Title</label><br>
-  <input id="title" type="text" name="topic[title]"><br>
+  <input class="form-style" id="title" type="text" name="topic[title]"><br>
   <label for="description">Description</label><br>
-  <textarea id="description" name="topic[description]"></textarea><br>
+  <textarea class="form-style" id="description" name="topic[description]"></textarea><br>
   <label for="topic_tags">Tags / Categories (comma, separated, underscores_for_multiple_words)</label><br>
-  <input id="topic_tags" name="topic[tag_names]" type="text"><br>
-  <input type="submit">
+  <input class="form-style" id="topic_tags" name="topic[tag_names]" type="text"><br>
+  <input type="submit" class="btn btn-default">
 </form>
 </div>
