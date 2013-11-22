@@ -22,11 +22,13 @@ class Topic < ActiveRecord::Base
     self.topic_tags.build(:tag => tag)
   end
 
-  def self.search(search)
-    if search
-      find(:all, :conditions => ['title LIKE ?', "%#{search}%"])
+  def self.search(query)
+    if query.present?
+      where("title @@ :q", q: query)
+      # find(:all, :conditions => ['title LIKE ?', "%#{search}%"])
     else
-      find(:all)
+      scoped
+      # find(:all)
     end
   end
 
