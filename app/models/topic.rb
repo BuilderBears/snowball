@@ -25,7 +25,7 @@ class Topic < ActiveRecord::Base
   def self.search(query)
     if query.present?
       where("title @@ :q", q: query)
-      # find(:all, :conditions => ['title LIKE ?', "%#{search}%"])
+      # find(:all, :conditions => ['title LIKE ?', "%#{query}%"])
     else
       scoped
       # find(:all)
