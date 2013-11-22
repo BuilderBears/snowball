@@ -11,7 +11,7 @@
 <% @sorted_suggestions.each do |suggestion| %>
   <div class="well clearfix">
     <div id="suggestion-content">
-      <p><%= link_to "#{suggestion.title}", suggestion.url %> <span class="suggestion-name-link"><%= link_to " added by: #{suggestion.user.name}", user_path(suggestion.user) %></span></p>
+      <p><%= link_to "#{suggestion.title}", suggestion.url, :target => '_blank' %> <span class="suggestion-name-link"><%= link_to " added by: #{suggestion.user.name}", user_path(suggestion.user) %></span></p>
       <p><%= suggestion.description %></p>
     </div>
     

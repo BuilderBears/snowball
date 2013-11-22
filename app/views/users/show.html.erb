@@ -22,7 +22,7 @@
 <h3><%= @user.name %>'s Suggestions</h3>
   <% @sorted_suggestions.each do |suggestion| %>
   <div class="well">
-    <p><%= link_to "#{suggestion.title}", suggestion.url %></p>
+    <p><%= link_to "#{suggestion.title}", suggestion.url, :target => '_blank' %></p>
     <p>For Post called: <%= link_to suggestion.topic.title, topic_path(suggestion.topic) %></p>
     <p>Suggestion Upvotes: <%= suggestion.upvotes.count %></p>
     </div>
