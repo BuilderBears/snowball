@@ -3,6 +3,32 @@ class TopicsController < ApplicationController
 
   def index
     @topics = Topic.all
+    @sorted_topics = @topics.sort_by { |topic| topic.suggestions.count }.reverse
+
+    third_of_topics = @sorted_topics.count / 3
+
+    @column_1 = []
+    @column_2 = []
+    @column_3 = []
+
+    third_of_topics.times do
+      @column_1 << @sorted_topics.shift
+    end
+
+    third_of_topics.times do
+      @column_2 << @sorted_topics.shift
+    end
+
+    third_of_topics.times do
+      @column_3 << @sorted_topics.shift
+    end
+    
+    if @sorted_topics.size == 1
+      @column_1 << @sorted_topics.shift
+    elsif @sorted_topics.size == 2
+      @column_2 << @sorted_topics.shift
+    end
+
   end
 
   def new
