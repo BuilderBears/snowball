@@ -7,6 +7,11 @@ function postSuggestion(){
         postSuggestion();
         window.location.reload();
       });
+      $(window).on("login:failure", function(){
+        alert("email or password is incorrect");
+        // above alert is a hack, do below:
+        // AJAX-refresh modal with flash message
+      });
     } else {
       // window.location = 'topic/';
       // window.location.reload();
