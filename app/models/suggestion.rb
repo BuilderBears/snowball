@@ -2,6 +2,7 @@ class Suggestion < ActiveRecord::Base
   include LinkScraper
 
   has_many :upvotes
+  has_many :comments
   belongs_to :topic 
   belongs_to :user
 

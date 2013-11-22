@@ -1,5 +1,7 @@
 Snowball::Application.routes.draw do
 
+  resources :comments
+
   get '/about' => 'pages#about'
   get '/contact' => 'pages#contact'
 
