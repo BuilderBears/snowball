@@ -8,6 +8,9 @@ class SessionsController < ApplicationController
       if user && user.authenticate(params[:password])
         session[:user_id] = user.id
         render :json => {:login_status => "success"}
+      else
+        flash.now.alert = "Email or password is invalid!!"
+        render :json => {:login_status => "failure"}
       end
     else
       user = User.find_by(email: params[:email])
@@ -15,7 +18,7 @@ class SessionsController < ApplicationController
         session[:user_id] = user.id
         redirect_to root_path, notice: "Logged in!"
       else
-        flash.now.alert = "Email or password is invalid"
+        flash.now.alert = "Email or password is invalid."
         render :new
       end
     end
