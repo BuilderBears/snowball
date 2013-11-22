@@ -1,6 +1,10 @@
 class TopicsController < ApplicationController
   before_filter :authorize, only: [:new, :create, :edit, :update, :upvote_suggestion]
 
+  def search_results
+    @topic_search_results = Topic.search(params["srch-term"])
+  end
+
   def index
     @topics = Topic.all
     @sorted_topics = @topics.sort_by { |topic| topic.suggestions.count }.reverse

@@ -12,6 +12,7 @@ Snowball::Application.routes.draw do
   resources :suggestions
 
   resources :topics
+  get "search_results" => "topics#search_results"  
 
   resources :sessions
 

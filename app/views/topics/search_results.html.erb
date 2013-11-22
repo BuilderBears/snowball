@@ -1,0 +1,18 @@
+<h1 style="color: #7f8c8d;">All Topics</h1>
+
+    <section id="topics">
+    <% @topic_search_results.each do |topic| %>
+    <article>
+      <h3 class="topic-link"><%= link_to topic.title, topic_path(topic) %> <span class="name-link"> <%=link_to "posted by: #{topic.user.name}", user_path(topic.user) %></span></h3>
+      <p><strong>Description:</strong> <%= topic.description %></p>
+          <% if !topic.tags.empty? %>
+      <p><strong>Tags:</strong>
+        <% topic.tags.all.each do |tag| %>
+          <%= link_to tag.name, tag_path(tag) %> 
+        <% end %>
+      </p>
+    <% end %>
+      <p><strong> <%=topic.suggestions.count %></strong> <%=topic.suggestions.count == 1 ? "suggestion" : "suggestions" %></p>
+    </article>
+    <% end %>
+    </section>
