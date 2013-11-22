@@ -2,16 +2,21 @@
 
 <h3><%= @user.name %>'s Topics</h3>
 <% @user.topics.each do |topic| %>
-
   <div class="well">
   <p>Topic Title: <%= link_to topic.title, topic_path(topic) %></p>
-  <p>Suggestions for <%= topic.title %>: <% topic.suggestions.each do |suggestion| %></p>
-    <p>Suggestion Title: <%= suggestion.title %></p>
-    <p>Suggestion URL: <%= suggestion.url %></p>
-    <p>Suggestion Upvotes: <%= suggestion.upvotes.count %></p>
-  <% end %>
+  <% if !topic.tags.empty? %>
+  <p>Topic Tags: <% topic.tags.each do |tag| %>
+    <%= link_to tag.name, tag_path(tag) %>,
+    <% end %>
+  <% end %></p> 
+  <p>Total upvotes for topic:
+    <% total = 0 %> 
+    <% topic.suggestions.each do |suggestion| %>
+     <% total += suggestion.upvotes.count %>
+     <% end %>
+     <%= total %></p>
   </div>
-<% end %>
+  <% end %>
 
 
 <h3><%= @user.name %>'s Suggestions</h3>
