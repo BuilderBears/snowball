@@ -1,6 +1,7 @@
 == README
 
-# What is this?
+What is this?
+================
 
 GuideMe ("project *snowball*") is a platform for posting topics and receiving suggestions from the community. 
 Users can upvote the suggestions they think are best.
