@@ -1,4 +1,6 @@
-== README
+# README
+
+---------
 
 What is this?
 ================
