@@ -6,12 +6,10 @@ function upvoteSuggestion(suggestion_id){
       jsLogin();
       $(window).on("login:success", function(){
         upvoteSuggestion(suggestion_id);
-        window.location.reload();
+        $(window).location.reload();
       });
       $(window).on("login:failure", function(){
         alert("email or password is incorrect");
-        // above alert is a hack, do below:
-        // AJAX-refresh modal with flash message
       });
     } else {
       $('#upvotecountspan'+suggestion_id.toString()).html(json.upvote_count);
